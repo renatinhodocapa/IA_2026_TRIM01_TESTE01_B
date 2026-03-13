@@ -14,9 +14,16 @@ Instruções:
 # ==============================================================================
 # Dado um dicionário onde as chaves são nomes de alunos e os valores são as suas notas,
 # retorne um NOVO dicionário contendo apenas os alunos aprovados (nota >= 7.0).
-def filtrar_aprovados(diario_notas):
-    pass
+def filtrar_aprovados(notas):
+    alunos = {"Renato": 10.0, "Leite": 6.0, "Dudi": 7.2}
 
+    aprovados = {}
+
+    for nome, nota in alunos:
+        if nota >= 7.0:
+            aprovados(nome) == nota
+
+    print(aprovados)
 
 # ==============================================================================
 # Questão 2: Funções Lambda e Sorted (20 pontos)
@@ -25,8 +32,8 @@ def filtrar_aprovados(diario_notas):
 # Use a função `sorted` com uma função `lambda` para retornar essa lista 
 # ordenada pelo preço (o segundo elemento da tupla) em ordem crescente.
 def ordenar_por_preco(produtos):
-    pass
-
+    produtos = {1: ("Teclado", 200), 2: ("Mouse", 150), 3: ("Monitor", 1000)}
+    return sorted(produtos, key=lambda produto: produto[1, 2, 3])
 
 # ==============================================================================
 # Questão 3: Funções Lambda e Map (20 pontos)
@@ -35,8 +42,8 @@ def ordenar_por_preco(produtos):
 # uma nova lista com as temperaturas convertidas para Fahrenheit.
 # Fórmula: F = (C * 9/5) + 32
 def converter_para_fahrenheit(temperaturas_celsius):
-    pass
-
+    c = temperaturas_celsius
+    return list(map(lambda c: (c * 9/5) + 32, temperaturas_celsius))
 
 # ==============================================================================
 # Questão 4: Recursão (20 pontos)
@@ -49,8 +56,10 @@ def converter_para_fahrenheit(temperaturas_celsius):
 # O passo recursivo subtrai o denominador do numerador e soma 1 ao resultado 
 # da chamada recursiva.
 def divisao_recursiva(numerador, denominador):
-    pass
-
+    if numerador < denominador:
+        return 0
+    
+    return 1 + divisao_recursiva(numerador - denominador, denominador)
 
 # ==============================================================================
 # Questão 5: Teoria aplicada à IA (20 pontos)
@@ -62,12 +71,16 @@ def divisao_recursiva(numerador, denominador):
 # como argumento padrão numa função de pré-processamento de dados."
 
 RESPOSTA_Q5 = """
-Escreva a sua resposta teórica aqui...
+#As estruturas mutáveis no python podem ser alteradas depois de serem feitas, como listas e dicionários.
+#Já estruturas imutáveis não podem ser modificadas, como tuplas, strings e números.
+#Ela pode ser modificada e prejudicar o código, por exemplo.
 """
-
 if __name__ == "__main__":
     # Área livre para testes locais do aluno.
     # Exemplo de teste esperado para a Questão 4:
     # print(divisao_recursiva(20, 5)) # Deve imprimir 4
     # print(divisao_recursiva(17, 5)) # Deve imprimir 3
-    pass
+    print(filtrar_aprovados())
+    print(ordenar_por_preco())
+    print(converter_para_fahrenheit())
+    print(divisao_recursiva())
